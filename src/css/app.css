@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+}
+
+h1,
+div,
+ul,
+li,
+span,
+img,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  vertical-align: bottom;
+  border: 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  appearance: none;
+  font-size: inherit;
+}
+
+.carousel__container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto 40px;
+}
+
+.carousel__item {
+  display: none;
+
+  &.carousel__active {
+    display: block;
+  }
+}
+
+.carousel__prev,
+.carousel__next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: .3s;
+  border-radius: 0 3px 3px 0;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, .8);
+  }
+}
+
+.carousel__next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.carousel__indicator {
+  cursor: pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color .3s;
+
+  &.indicator__active,
+  &:hover {
+    background-color: #717171;
+  }
+}
+
+.carousel__caption {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.carousel__number {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: .4;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

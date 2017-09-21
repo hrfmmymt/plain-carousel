@@ -1,0 +1,46 @@
+{
+  "name": "plain-carousel",
+  "version": "0.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "js": "NODE_ENV=production ./node_modules/.bin/rollup -c",
+    "watch-js": "rollup -c -w",
+    "lint-js": "eslint src",
+    "css": "postcss -c postcss.config.js -o public/css/plain-carousel.css src/css/app.css",
+    "watch-css": "postcss -c postcss.config.js -o public/css/plain-carousel.css src/css/app.css -w --map",
+    "lint-css": "stylelint -c .stylelintrc 'src/**/*.css'",
+    "serve": "browser-sync start --server --files './index.html, public/css/*.css, public/js/*.js' --config bs-config.js",
+    "watch": "npm run serve & npm run watch-js & npm run watch-css",
+    "build": "npm run css && npm run js"
+  },
+  "keywords": [
+    "carousel"
+  ],
+  "author": "hrfmmymt",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer": "^7.1.4",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.0",
+    "babel-preset-es2015-rollup": "^3.0.0",
+    "browser-sync": "^2.18.13",
+    "eslint": "^4.7.1",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "postcss": "^6.0.11",
+    "postcss-cli": "^4.1.1",
+    "postcss-nested": "^2.1.2",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.2",
+    "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-watch": "^4.3.1",
+    "stylelint": "^8.1.1",
+    "stylelint-config-standard": "^17.0.0"
+  }
+}

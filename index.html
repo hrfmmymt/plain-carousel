@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>plain-carousel</title>
+    <link rel="stylesheet" href="public/css/plain-carousel.css">
+  </head>
+  <body>
+    <h1>plain-carousel</h1>
+    <div class="carousel__container">
+      <ul class="carousel__list">
+        <li class="carousel__item fade">
+          <img src="//placecage.com/g/1000/300" style="width:100%" data-caption="this caption is a custom data attributes" alt="pic1-1">
+        </li>
+
+        <li class="carousel__item fade">
+          <img src="//placeimg.com/1000/350/any" style="width:100%" alt="or alt attributes">
+        </li>
+
+        <li class="carousel__item fade">
+          <img src="//dummyimage.com/1000" style="width:100%" alt="pic1-3">
+        </li>
+
+        <li class="carousel__item fade">
+          <img src="//fillmurray.com/g/1000/350" style="width:100%">
+        </li>
+      </ul>
+    </div>
+
+    <div class="carousel__container">
+      <ul class="carousel__list">
+        <li class="carousel__item fade">
+          <img src="//placebear.com/1000/350" style="width:100%" data-caption="my super cool image" alt="pic2-1">
+        </li>
+
+        <li class="carousel__item fade">
+          <img src="//placecage.com/1000/350" style="width:100%" alt="pic2-2">
+        </li>
+
+        <li class="carousel__item fade">
+          <img src="//baconmockup.com/1000/350" style="width:100%">
+        </li>
+      </ul>
+    </div>
+
+    <script src="public/js/plain-carousel.js"></script>
+    <script>
+      var carousel = new plainCarousel();
+    </script>
+  </body>
+</html>
