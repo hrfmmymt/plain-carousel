@@ -5,8 +5,8 @@ import setArrows from './arrow'
 import setIndicators from './indicator'
 import autoPlay from './autoplay'
 
-(function (global) {
-  global.plainCarousel = function (options) {
+(global => {
+  global.plainCarousel = options => {
     'use strict'
 
     const extend = function (out) {
