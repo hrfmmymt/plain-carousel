@@ -24,31 +24,31 @@ export default function setArrows () {
     links[index].onclick = event => {
       const current = event.target.parentNode
       const carouselItems = current.getElementsByClassName('carousel__item')
-      const indicators = current.getElementsByClassName('carousel__indicator')
+      const indicators = current.getElementsByClassName('carousel__indicator') || null
       const currentCarousel = current.getElementsByClassName('carousel__active')[0]
-      const currentindicator = current.getElementsByClassName('indicator__active')[0]
+      const currentIndicator = current.getElementsByClassName('indicator__active')[0] || null
 
       // initialize
       currentCarousel.classList.remove('carousel__active')
-      currentindicator.classList.remove('indicator__active')
+      if (indicators.length > 0) currentIndicator.classList.remove('indicator__active')
 
       if (event.target.className === 'carousel__next') {
         if (currentCarousel.nextElementSibling.classList.contains('carousel__item')) {
           currentCarousel.nextElementSibling.classList.add('carousel__active')
-          currentindicator.nextElementSibling.classList.add('indicator__active')
+          if (indicators.length > 0) currentIndicator.nextElementSibling.classList.add('indicator__active')
         } else {
           carouselItems[0].classList.add('carousel__active')
-          indicators[0].classList.add('indicator__active')
+          if (indicators.length > 0) indicators[0].classList.add('indicator__active')
         }
       }
 
       if (event.target.className === 'carousel__prev') {
         if (currentCarousel.previousElementSibling) {
           currentCarousel.previousElementSibling.classList.add('carousel__active')
-          currentindicator.previousElementSibling.classList.add('indicator__active')
+          if (indicators.length > 0) currentIndicator.previousElementSibling.classList.add('indicator__active')
         } else {
           carouselItems[carouselItems.length - 1].classList.add('carousel__active')
-          indicators[carouselItems.length - 1].classList.add('indicator__active')
+          if (indicators.length > 0) indicators[carouselItems.length - 1].classList.add('indicator__active')
         }
       }
     }

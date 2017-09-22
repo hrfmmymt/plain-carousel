@@ -45,7 +45,12 @@
 
     <script src="public/js/plain-carousel.js"></script>
     <script>
-      var plainCarousel = new plainCarousel();
+      var plainCarousel = new plainCarousel({
+        autoPlay: false,
+        speed: 3000,
+        arrows: true,
+        indicators: false
+      });
     </script>
   </body>
 </html>
