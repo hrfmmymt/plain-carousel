@@ -2777,6 +2777,12 @@ postcss-cli@^4.1.1:
     read-cache "^1.0.0"
     yargs "^8.0.1"
 
+postcss-inline-comment@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/postcss-inline-comment/-/postcss-inline-comment-3.0.0.tgz#1e6aa9880ee253821cf5c3d6bc0eccd775f9a8a3"
+  dependencies:
+    postcss "^5.0.21"
+
 postcss-less@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/postcss-less/-/postcss-less-1.1.0.tgz#bdcc76be64c4324d873fbc5cd9fa2e799e4305fa"
@@ -2848,7 +2854,7 @@ postcss-value-parser@^3.2.3, postcss-value-parser@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-3.3.0.tgz#87f38f9f18f774a4ab4c8a232f5c5ce8872a9d15"
 
-postcss@^5.2.16:
+postcss@^5.0.21, postcss@^5.2.16:
   version "5.2.17"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-5.2.17.tgz#cf4f597b864d65c8a492b2eabe9d706c879c388b"
   dependencies:

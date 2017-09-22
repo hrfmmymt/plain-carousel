@@ -1,6 +1,8 @@
 {
   "extends": "stylelint-config-standard",
   "rules": {
-    "number-leading-zero": "never"
+    "number-leading-zero": "never",
+    "no-invalid-double-slash-comments": false,
+    "no-unknown-animations": true
   }
 }

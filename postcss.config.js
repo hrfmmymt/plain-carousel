@@ -1,6 +1,7 @@
 module.exports = {
   plugins: [
     require('postcss-nested'),
-    require('autoprefixer')
+    require('autoprefixer'),
+    require('postcss-inline-comment')
   ]
 }

@@ -33,6 +33,7 @@
     "eslint-plugin-standard": "^3.0.1",
     "postcss": "^6.0.11",
     "postcss-cli": "^4.1.1",
+    "postcss-inline-comment": "^3.0.0",
     "postcss-nested": "^2.1.2",
     "rollup": "^0.50.0",
     "rollup-plugin-babel": "^3.0.2",
