@@ -3,6 +3,7 @@
           box-sizing: border-box;
 }
 
+body,
 h1,
 div,
 ul,
@@ -32,6 +33,15 @@ button {
      -moz-appearance: none;
           appearance: none;
   font-size: inherit;
+}
+
+.wrapper {
+  width: 1070px;
+  margin: 30px auto;
+}
+
+h1 {
+  margin-bottom: 30px;
 }
 
 .carousel__container {
