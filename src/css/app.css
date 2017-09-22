@@ -13,6 +13,10 @@ button {
   padding: 0;
 }
 
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 img {
   vertical-align: bottom;
   border: 0;
@@ -98,12 +102,12 @@ button {
   top: 0;
 }
 
-.fade {
-  animation-name: fade;
+.carousel__effect--fade {
+  animation-name: carousel-fade;
   animation-duration: 1.5s;
 }
 
-@keyframes fade {
+@keyframes carousel-fade {
   from {
     opacity: .4;
   }
