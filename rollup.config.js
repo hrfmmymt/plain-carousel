@@ -6,8 +6,6 @@ import replace from 'rollup-plugin-replace'
 export default {
   entry: 'src/js/app.js',
   format: 'iife',
-  dest: 'public/js/plain-carousel.js',
-  sourceMap: true,
   plugins: [
     eslint(),
     babel({
