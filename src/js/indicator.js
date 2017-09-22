@@ -1,4 +1,4 @@
-export default function indicatorsFunc () {
+export default function setIndicators () {
   const parents = document.getElementsByClassName('carousel__list')
 
   // create elements

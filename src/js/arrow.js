@@ -1,4 +1,4 @@
-export default function arrowsFunc () {
+export default function setArrows () {
   const parents = document.getElementsByClassName('carousel__list')
 
   // create arrow buttons

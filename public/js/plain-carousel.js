@@ -1,7 +1,7 @@
 (function () {
 'use strict';
 
-function numbersFunc() {
+function setNumbers() {
   var parents = document.getElementsByClassName('carousel__list');
 
   // create carousel list number
@@ -20,7 +20,7 @@ function numbersFunc() {
   });
 }
 
-function captionsFunc() {
+function setCaptions() {
   var parents = document.getElementsByClassName('carousel__list');
 
   // create captions
@@ -40,7 +40,7 @@ function captionsFunc() {
   });
 }
 
-function arrowsFunc() {
+function setArrows() {
   var parents = document.getElementsByClassName('carousel__list');
 
   // create arrow buttons
@@ -97,7 +97,7 @@ function arrowsFunc() {
   });
 }
 
-function indicatorsFunc() {
+function setIndicators() {
   var parents = document.getElementsByClassName('carousel__list');
 
   // create elements
@@ -140,21 +140,55 @@ function indicatorsFunc() {
   });
 }
 
+function autoPlay() {
+  var parents = document.getElementsByClassName('carousel__list');
+
+  Array.prototype.forEach.call(parents, function (parentNode) {
+    var carouselItems = parentNode.getElementsByClassName('carousel__item');
+    var currentCarouselItem = parentNode.getElementsByClassName('carousel__active');
+    var indicators = parentNode.getElementsByClassName('carousel__indicator');
+    var currentIndicator = parentNode.getElementsByClassName('indicator__active');
+
+    // carousel items
+    Array.prototype.forEach.call(currentCarouselItem, function (currentItem) {
+      currentItem.classList.remove('carousel__active');
+      var nextCarouselItem = currentItem.nextElementSibling || carouselItems[0];
+      if (nextCarouselItem.classList.contains('carousel__item')) {
+        nextCarouselItem.classList.add('carousel__active');
+      } else {
+        carouselItems[0].classList.add('carousel__active');
+      }
+    });
+
+    // indicators
+    Array.prototype.forEach.call(currentIndicator, function (currentItem) {
+      currentItem.classList.remove('indicator__active');
+      var nextIndicator = currentItem.nextElementSibling || indicators[0];
+      if (nextIndicator.classList.contains('carousel__indicator')) {
+        nextIndicator.classList.add('indicator__active');
+      } else {
+        indicators[0].classList.add('indicator__active');
+      }
+    });
+  });
+}
+
 (function (global) {
   global.plainCarousel = function () {
     'use strict';
 
-    numbersFunc();
-    captionsFunc();
-    arrowsFunc();
-    indicatorsFunc();
+    setNumbers();
+    setCaptions();
+    setArrows();
+    setIndicators();
+    setInterval(autoPlay, 5000);
 
     var parents = document.getElementsByClassName('carousel__list');
     Array.prototype.forEach.call(parents, function (node, index) {
-      var slides = parents[index].getElementsByClassName('carousel__item');
+      var carouselItems = parents[index].getElementsByClassName('carousel__item');
       var indicators = parents[index].getElementsByClassName('carousel__indicator');
-      slides[0].classList.add('carousel__active');
-      indicators[0].classList.add('indicator__active');
+      carouselItems[0].classList.add('carousel__active');
+      if (indicators.length > 0) indicators[0].classList.add('indicator__active');
     });
   };
 })(typeof global !== 'undefined' ? global : window);

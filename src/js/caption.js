@@ -1,4 +1,4 @@
-export default function captionsFunc () {
+export default function setCaptions () {
   const parents = document.getElementsByClassName('carousel__list')
 
   // create captions

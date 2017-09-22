@@ -1,4 +1,4 @@
-export default function numbersFunc () {
+export default function setNumbers () {
   const parents = document.getElementsByClassName('carousel__list')
 
   // create carousel list number
