@@ -16,6 +16,7 @@ export default function autoPlay () {
       } else {
         carouselItems[0].classList.add('carousel__active')
       }
+      return false
     })
 
     // indicators
@@ -27,6 +28,7 @@ export default function autoPlay () {
       } else {
         indicators[0].classList.add('indicator__active')
       }
+      return false
     })
   })
 }
