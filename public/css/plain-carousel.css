@@ -20,19 +20,19 @@ body {
 }
 
 img {
-  vertical-align: bottom;
   border: 0;
+  vertical-align: bottom;
 }
 
 button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
   padding: 0;
+  border: none;
+  background-color: transparent;
+  font-size: inherit;
+  cursor: pointer;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  font-size: inherit;
 }
 
 .wrapper {
@@ -65,12 +65,12 @@ h1 {
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: white;
-  font-weight: bold;
+  border-radius: 0 3px 3px 0;
   font-size: 18px;
+  font-weight: bold;
+  color: #fff;
   -webkit-transition: .3s;
   transition: .3s;
-  border-radius: 0 3px 3px 0;
 }
 
 .carousel__prev:hover, .carousel__next:hover {
@@ -83,13 +83,12 @@ h1 {
 }
 
 .carousel__indicator {
-  cursor: pointer;
-  height: 13px;
-  width: 13px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
   display: inline-block;
+  width: 13px;
+  height: 13px;
+  margin: 0 2px;
+  border-radius: 50%;
+  background-color: #bbb;
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
 }
@@ -100,21 +99,21 @@ h1 {
   }
 
 .carousel__caption {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
   position: absolute;
   bottom: 20px;
   width: 100%;
+  padding: 8px 12px;
+  font-size: 15px;
+  color: #f2f2f2;
   text-align: center;
 }
 
 .carousel__number {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
   position: absolute;
   top: 0;
+  padding: 8px 12px;
+  font-size: 12px;
+  color: #f2f2f2;
 }
 
 .carousel__effect--fade {

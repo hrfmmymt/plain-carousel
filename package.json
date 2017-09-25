@@ -8,7 +8,7 @@
     "build:js": "NODE_ENV=production ./node_modules/.bin/rollup -c -o public/js/plain-carousel.min.js",
     "watch:js": "rollup -c -o public/js/plain-carousel.js -w -m inline",
     "lint:js": "eslint src",
-    "css": "postcss -c postcss.config.js -o public/css/plain-carousel.css src/css/app.css",
+    "dev:css": "postcss -c postcss.config.js -o public/css/plain-carousel.css src/css/app.css",
     "watch:css": "postcss -c postcss.config.js -o public/css/plain-carousel.css src/css/app.css -w --map",
     "lint:css": "stylelint -c .stylelintrc 'src/**/*.css'",
     "serve": "browser-sync start --server --files './index.html, public/css/*.css, public/js/*.js' --config bs-config.js",
