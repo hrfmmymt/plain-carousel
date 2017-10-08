@@ -15,7 +15,7 @@ export default function setIndicators () {
       indicatorElements.setAttribute('type', 'button')
       indicatorParents.appendChild(indicatorElements)
     })
-    parents[index].appendChild(indicatorParents)
+    parents[index].parentNode.appendChild(indicatorParents)
   })
 
   // click events

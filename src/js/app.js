@@ -4,6 +4,7 @@ import setCaptions from './caption'
 import setArrows from './arrow'
 import setIndicators from './indicator'
 import autoPlay from './autoplay'
+import setSlideAnimations from './slide'
 
 (global => {
   global.plainCarousel = options => {
@@ -37,7 +38,8 @@ import autoPlay from './autoplay'
       arrows: true,
       captions: false,
       indicators: false,
-      numbers: false
+      numbers: false,
+      slide: false
     }, options)
 
     if (settings.numbers) setNumbers()
@@ -45,6 +47,7 @@ import autoPlay from './autoplay'
     if (settings.arrows) setArrows()
     if (settings.indicators) setIndicators()
     if (settings.autoPlay) setInterval(autoPlay, settings.speed)
+    if (settings.slide) setSlideAnimations()
     init()
   }
 })(typeof global !== 'undefined' ? global : window)
