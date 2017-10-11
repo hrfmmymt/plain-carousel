@@ -1,5 +1,6 @@
-export default function setArrows () {
+export default function setArrows (options) {
   const parents = document.getElementsByClassName('carousel__list')
+
 
   // create arrow buttons
   Array.prototype.forEach.call(parents, (node, index) => {
@@ -28,6 +29,7 @@ export default function setArrows () {
       const indicators = currentContainer.getElementsByClassName('carousel__indicator') || null
       const currentCarousel = current.getElementsByClassName('carousel__active')[0]
       const currentIndicator = currentContainer.getElementsByClassName('indicator__active')[0] || null
+      const currentCarouselWidth = currentCarousel.offsetWidth
 
       // initialize
       currentCarousel.classList.remove('carousel__active')
@@ -35,6 +37,9 @@ export default function setArrows () {
 
       if (event.target.className === 'carousel__next') {
         if (currentCarousel.nextElementSibling) {
+          if (options.slide) {
+            currentCarousel.parentNode.style.transform = 'translate3d(-' + currentCarouselWidth + 'px, 0, 0)'
+          }
           currentCarousel.nextElementSibling.classList.add('carousel__active')
           if (indicators.length > 0) currentIndicator.nextElementSibling.classList.add('indicator__active')
         } else {

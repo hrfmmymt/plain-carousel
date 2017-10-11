@@ -9,7 +9,10 @@ export default function setSlideAnimations () {
     node.parentNode.style.overflow = 'hidden'
     node.parentNode.style.maxWidth = 'none'
     node.parentNode.style.position = 'static'
+    node.parentNode.style.cursor = '-webkit-grab'
     node.style.clear = 'both'
+    node.style.transition = 'all 200ms esse-out'
+    node.style.transform = 'translate3d(0, 0, 0)'
 
     Array.prototype.forEach.call(itemList, (item, index) => {
       const carouselItem = item.children[0]

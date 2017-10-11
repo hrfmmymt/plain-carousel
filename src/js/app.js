@@ -44,7 +44,7 @@ import setSlideAnimations from './slide'
 
     if (settings.numbers) setNumbers()
     if (settings.captions) setCaptions()
-    if (settings.arrows) setArrows()
+    if (settings.arrows) setArrows(settings)
     if (settings.indicators) setIndicators()
     if (settings.autoPlay) setInterval(autoPlay, settings.speed)
     if (settings.slide) setSlideAnimations()
