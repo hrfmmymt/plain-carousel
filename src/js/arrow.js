@@ -14,26 +14,27 @@ export default function setArrows () {
     nextButtons.innerHTML = '&#10095;'
     nextButtons.setAttribute('type', 'button')
 
-    parents[index].appendChild(prevButtons)
-    parents[index].appendChild(nextButtons)
+    parents[index].parentNode.appendChild(prevButtons)
+    parents[index].parentNode.appendChild(nextButtons)
   })
 
   // click events
   const links = document.querySelectorAll('.carousel__prev, .carousel__next')
   Array.prototype.forEach.call(links, (node, index) => {
     links[index].onclick = event => {
-      const current = event.target.parentNode
+      const currentContainer = event.target.parentNode
+      const current = currentContainer.children[0]
       const carouselItems = current.getElementsByClassName('carousel__item')
-      const indicators = current.getElementsByClassName('carousel__indicator') || null
+      const indicators = currentContainer.getElementsByClassName('carousel__indicator') || null
       const currentCarousel = current.getElementsByClassName('carousel__active')[0]
-      const currentIndicator = current.getElementsByClassName('indicator__active')[0] || null
+      const currentIndicator = currentContainer.getElementsByClassName('indicator__active')[0] || null
 
       // initialize
       currentCarousel.classList.remove('carousel__active')
       if (indicators.length > 0) currentIndicator.classList.remove('indicator__active')
 
       if (event.target.className === 'carousel__next') {
-        if (currentCarousel.nextElementSibling.classList.contains('carousel__item')) {
+        if (currentCarousel.nextElementSibling) {
           currentCarousel.nextElementSibling.classList.add('carousel__active')
           if (indicators.length > 0) currentIndicator.nextElementSibling.classList.add('indicator__active')
         } else {

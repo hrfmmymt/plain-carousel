@@ -1,11 +1,11 @@
 export default function autoPlay () {
   const parents = document.getElementsByClassName('carousel__list')
 
-  Array.prototype.forEach.call(parents, parentNode => {
-    const carouselItems = parentNode.getElementsByClassName('carousel__item')
-    const currentCarouselItem = parentNode.getElementsByClassName('carousel__active')
-    const indicators = parentNode.getElementsByClassName('carousel__indicator')
-    const currentIndicator = parentNode.getElementsByClassName('indicator__active')
+  Array.prototype.forEach.call(parents, ulElements => {
+    const carouselItems = ulElements.getElementsByClassName('carousel__item')
+    const currentCarouselItem = ulElements.getElementsByClassName('carousel__active')
+    const indicators = ulElements.parentNode.getElementsByClassName('carousel__indicator')
+    const currentIndicator = ulElements.parentNode.getElementsByClassName('indicator__active')
 
     // carousel items
     Array.prototype.forEach.call(currentCarouselItem, currentItem => {
