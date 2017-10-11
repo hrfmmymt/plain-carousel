@@ -4,7 +4,6 @@ export default function setSlideAnimations () {
 
   // create captions
   Array.prototype.forEach.call(parents, (node, index) => {
-    console.log(node.offsetWidth)
     const itemList = node.getElementsByTagName('li')
     node.style.width = node.offsetWidth * itemList.length + 'px'
     node.parentNode.style.overflow = 'hidden'

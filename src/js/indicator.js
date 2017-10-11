@@ -9,9 +9,18 @@ export default function setIndicators () {
 
     // create indicators by carousel list number
     const itemList = node.getElementsByTagName('li')
+
+    let firstIteration = true
     Array.prototype.forEach.call(itemList, () => {
       const indicatorElements = document.createElement('button')
-      indicatorElements.className = 'carousel__indicator'
+
+      if (firstIteration) {
+        indicatorElements.className = 'carousel__indicator indicator__active'
+        firstIteration = false
+      } else {
+        indicatorElements.className = 'carousel__indicator'
+      }
+
       indicatorElements.setAttribute('type', 'button')
       indicatorParents.appendChild(indicatorElements)
     })
